@@ -18,16 +18,15 @@ class ViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
-    // viewModelに監視をお願いしている
-    private lazy var viewModel = ViewModel(
+    // viewModelをインスタンス化
+    private lazy var viewModel = ViewModel (
         beforeTextObservable: beforeTextField.rx.text.asObservable(),
         afterTextObservable: afterTextField.rx.text.asObservable()
-        //model: Model()
     )
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 同期して、mixTextLabelの文字列も更新
+        // viewModelのmixTextをmixTextLabelに流し続けてあげる
         viewModel.mixText
             .bind(to: mixTextLabel.rx.text)
             .disposed(by: disposeBag)

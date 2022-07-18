@@ -9,17 +9,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-protocol ModelProtocol {
-    func validate(beforeText: String?, afterText: String?) -> Observable<String>
-}
-
+// 今回は必要がないので使わない。
 final class Model: ModelProtocol {
-
-    func validate(beforeText: String?, afterText: String?) -> Observable<String> {
-        let before = beforeText ?? ""
-        let after = afterText ?? ""
-        return Observable.just((before + after))
-    }
-
-
 }

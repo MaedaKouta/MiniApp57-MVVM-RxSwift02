@@ -17,9 +17,10 @@ class ViewModel {
     init(beforeTextObservable: Observable<String?>,
          afterTextObservable: Observable<String?>) {
 
-        self.mixText = Observable.combineLatest(beforeTextObservable, afterTextObservable) {
-            "\($0!)" + "\($1!)"
-        }
+        self.mixText = Observable
+            .combineLatest(beforeTextObservable, afterTextObservable) {
+                "\($0!)" + "\($1!)"
+            }
     }
 
 }

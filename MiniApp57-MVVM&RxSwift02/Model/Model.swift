@@ -10,5 +10,6 @@ import RxCocoa
 import RxSwift
 
 // 今回は必要がないので使わない。
-final class Model: ModelProtocol {
-}
+//final class Model: ModelProtocol {
+//    //
+//}
